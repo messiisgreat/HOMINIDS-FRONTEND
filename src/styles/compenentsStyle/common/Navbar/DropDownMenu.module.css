@@ -1,0 +1,30 @@
+.menu-area {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.menu-area p {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  margin-top: 0.4rem;
+}
+
+.menu-area ul {
+  display: hide;
+  opacity: 0;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.menu-area:hover ul,
+.menu-area ul:hover {
+  opacity: 1;
+  display: block;
+}

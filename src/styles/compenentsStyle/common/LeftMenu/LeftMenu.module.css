@@ -1,0 +1,54 @@
+.scroll::-webkit-scrollbar {
+  width: 3px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.633);
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: #666565;
+}
+
+.left-menu button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  width: 15rem;
+}
+
+.left-menu li {
+  min-height: 3rem;
+  width: 100%;
+}
+
+.left-menu button:hover {
+  opacity: 0.5;
+}
+
+.market-place-item li {
+  display: flex;
+  align-items: left;
+  padding: 0 35%;
+  margin: 0.2rem;
+}
+
+.market-place-item li:hover {
+  opacity: 0.5;
+}
+
+.hide {
+  display: none;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 1rem;
+  width: 45px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 0.5rem;
+}

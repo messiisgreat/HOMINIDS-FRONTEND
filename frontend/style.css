@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    /*color variables*/
+    --accent-color: #EAF2F5;
+    --primary-text-color: #080404;
+    --secondary-text-color: #007676;
+    --light-text-color: #fff; /*used*/
+    --primary-color: var(--light-text-color);
+    --secondary-color: var(--secondary-text-color);
+    --alpha-secondary-color: rgba(0, 118, 118, 0.2);
+    --discount-color: #E71A1C;
+    --card-hover-bg-color: #f9f9f9;
+    --border-color: var(--card-hover-bg-color);
+    --box-shadow-color: var(--accent-color);
+    --shadow: rgba(0, 0, 0, 0.05);
+    --box-shadow: rbga(0, 0, 0, 0.25);
+    --discount-banner-background-overlay: linear-gradient(rgba(0, 118, 118, 0.8), rgba(0, 118, 118, 0.8));
+    --phone-app-shadow: #C7E1E8;
+    --alpha-primary-color: rgba(255, 255, 255, 0.5);
+    --rating-color: #ffa800;
+    --transition-curve: cubic-bezier(0.36, -0.21, 0.16, 1.97);
+    --markee: #AF50BD
+}
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: var(--primary-color);
+}
+.wrap{
+    min-height: 100vw;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vw 8vw;
+}
+nav a, .marquee{
+    font-weight: 700;
+}
+nav a{
+    text-decoration: none;
+    /*color: var(--light-text-color);*/
+}
+nav div:nth-child(1) a{
+    padding: 0.9rem;
+}
+nav div:nth-child(2) a{
+    padding: 0.9rem;
+}
+nav div:nth-child(3) a{
+    padding: 0.9rem;
+}
+.ads{
+    height: 30rem;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+.marquee{
+    background-color: var(--markee);
+    height: 4rem;
+    line-height: 4rem;
+    color: var(--light-text-color);
+}
+.marquee ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

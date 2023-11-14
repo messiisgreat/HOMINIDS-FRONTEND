@@ -1,0 +1,55 @@
+.btn-area {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  align-content: center;
+  position: relative;
+}
+
+.wallet-menu-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 11rem;
+
+  font-family: monospace;
+  font-size: 1rem;
+  border-radius: 15px;
+  border-color: blueviolet;
+  border-width: 4px;
+  padding: 0 10%;
+}
+
+.arrow {
+  position: absolute;
+  top: 0.45rem;
+  right: 0;
+  width: 45px;
+}
+
+.menu-area {
+  position: absolute;
+  /* top: 3.3rem; */
+  top: 32px;
+  margin-left: 0.2rem;
+  border-radius: 30px;
+  background-color: rgba(19, 16, 19, 0.279);
+}
+
+.menu-area li {
+  margin: 0 5%;
+  margin: 1rem;
+}
+
+.menu-area li:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  background-color: rgba(85, 5, 85, 0.279);
+}
+
+.icon {
+  display: inline;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}

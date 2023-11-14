@@ -1,0 +1,315 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('/public/BlackHanSans-Regular.ttf') format('truetype');
+}
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  min-height: 100%;
+  // overflow-x: hidden;
+  // background: #030303;
+  @apply text-main;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #272727;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4d4c4c;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5c5c5c;
+}
+@media all and (max-width: 600px) and (orientation: landscape) {
+  /* styles here */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-text {
+  &:hover {
+    @extend .text-gradient;
+  }
+}
+
+.scrollbar {
+  &::-webkit-scrollbar {
+    height: 13px;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply rounded-full bg-[#373737];
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @extend .bg-gradient;
+    @apply rounded-full;
+  }
+}
+
+.gradient-box {
+  $border: 1px;
+  background: #030303;
+  background-clip: padding-box;
+  border: $border solid #fff;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border;
+    @extend .bg-gradient;
+  }
+  &:hover {
+    border: solid $border transparent;
+  }
+}
+
+.bg-gradient {
+  background: linear-gradient(258.65deg, #9be3ff 15.72%, #f4b1ea 47.45%, #f8d46b 84.17%);
+}
+
+.text-gradient {
+  background: linear-gradient(258.65deg, #9be3ff 15.72%, #f4b1ea 47.45%, #f8d46b 84.17%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  &:hover {
+    background-size: 200% 100%;
+    animation: gradient 5s ease infinite;
+  }
+}
+
+.tab-list {
+  @apply flex flex-row gap-12 text-[18px] font-medium text-gray;
+  .tab-title {
+    @apply cursor-pointer pb-3 outline-none;
+    &:before {
+      @apply absolute bottom-0 left-0 w-0 max-w-[53px]
+      rounded-full transition-all duration-200 ease-out;
+      @extend .bg-gradient;
+      content: '';
+      height: 5px;
+    }
+    &:hover,
+    &.react-tabs__tab--selected {
+      @apply relative;
+      @extend .text-gradient;
+      &:before {
+        @apply w-full;
+      }
+      &:hover {
+        &:before {
+          @apply w-full;
+          background-size: 200% 100%;
+          animation: gradient 5s infinite;
+        }
+      }
+    }
+  }
+}
+
+.trending {
+  .slick-list {
+    @apply mx-auto mt-5 max-w-5xl;
+  }
+  .slick-slide {
+    @apply scale-75 text-center transition-transform duration-300 ease-out;
+    &.slick-current {
+      @apply scale-100;
+    }
+    img {
+      width: 100% !important;
+    }
+  }
+  .slick-arrow {
+    @apply absolute top-[60px] z-10 h-[350px] w-[250px] text-[0];
+    &.slick-next {
+      @apply right-[320px];
+    }
+    &.slick-prev {
+      @apply left-[320px];
+    }
+  }
+  .slick-dots {
+    @apply absolute left-1/2  top-full z-50 mt-4 -translate-x-1/2;
+    li {
+      @apply mx-1.5 inline-block h-[10px] w-[10px] overflow-hidden rounded-full bg-[#7a7a7a] text-[#7a7a7a] transition-all duration-200 ease-out;
+      &.slick-active {
+        @apply w-[85px] bg-[#d9d9d9] text-[#d9d9d9];
+      }
+    }
+  }
+}
+
+.collections {
+  @apply whitespace-nowrap pb-10;
+  @extend .scrollbar;
+  .collection {
+    @apply mr-8 inline-block last:mr-0;
+    width: calc(33.33% - 22px);
+  }
+}
+
+.category-filter {
+  @apply mt-12 flex flex-row gap-16 text-[18px] font-medium;
+  li {
+    a {
+      @apply cursor-pointer pb-3 outline-none;
+      &:before {
+        @apply absolute bottom-0 left-0 w-0 max-w-[53px]
+        rounded-full transition-all duration-200 ease-out;
+        @extend .bg-gradient;
+        content: '';
+        height: 5px;
+      }
+      &:hover,
+      &.active {
+        @apply relative;
+        @extend .text-gradient;
+        &:before {
+          @apply w-full;
+        }
+        &:hover {
+          &:before {
+            @apply w-full;
+            background-size: 200% 100%;
+            animation: gradient 5s infinite;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  @apply float-right mt-10 flex flex-row items-center gap-4;
+  li {
+    @apply font-bold outline-none;
+    &:hover,
+    &.selected {
+      @extend .text-gradient;
+    }
+    &.previous,
+    &.next {
+      &:hover {
+        @apply scale-105 transition-all duration-300 ease-out;
+      }
+      &.disabled {
+        @apply grayscale;
+        a {
+          @apply cursor-auto;
+        }
+        &:hover {
+          @apply scale-100;
+        }
+      }
+    }
+  }
+}
+
+.collection-social {
+  @apply inline-block h-8 w-8 rounded-full bg-[#2d2d2d] text-center;
+  svg {
+    @apply mx-auto mt-1.5 align-top;
+  }
+  &:hover {
+    @extend .bg-gradient;
+    background-size: 200% 100%;
+    animation: gradient 5s infinite;
+    @apply text-black;
+  }
+}
+
+.select {
+  @apply rounded-full bg-[#F5D26D] text-black;
+}
+
+.transition-width {
+  transition: width 0.3s ease-in-out;
+}
+.transition-opacity {
+  transition: opacity 0.5s ease-in-out;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.swiper-slide {
+  width: auto !important;
+}
+
+.Black-fontfamily {
+  font-family: 'Black Han Sans', Arial, sans-serif;
+}
+.Inter-fontfamily {
+  font-family: 'Inter', Arial, sans-serif;
+}
+.nato-fontfamily {
+  font-family: 'Lato', Arial, sans-serif;
+}
+.Actay-fontfamily {
+  font-family: 'Actay', Arial, sans-serif;
+}
+.submit-input input ::placeholder {
+  color: #aaa5a5 !important;
+}
+.mySwiper {
+  padding-top: 89px !important;
+  // width: fit-content;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.rounded-bg {
+  position: absolute;
+  opacity: 0.25;
+  transform: rotate(-50.87deg);
+}
+.rounded-bg-rotation {
+  width: 340.62px;
+  height: 928.14px;
+  position: absolute;
+  opacity: 0.4px;
+  transform: rotate(-101.1deg);
+}
